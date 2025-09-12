@@ -11,12 +11,13 @@ export default function ModelKitStoryPage() {
     <div className="relative overflow-hidden py-16 w-full">
       <div className="absolute inset-0 w-full h-full -z-10">
         <img
-          src="/background2.png"
+          src="/background.png"
           alt="Background Model Kit"
           className="w-full h-full object-cover object-center"
           style={{ objectFit: "cover", objectPosition: "center" }}
         />
-        <div className="absolute inset-0 bg-black/20" />
+        {/* Gradient overlay from transparent top to black bottom */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/60" />
       </div>
       <div className="space-y-4 text-center text-white drop-shadow-lg z-10 w-full px-4">
         <h1 className="text-3xl font-bold tracking-tight">Model Kit Story</h1>
@@ -32,18 +33,18 @@ export default function ModelKitStoryPage() {
               className="w-full h-full"
             />
           </AspectRatio>
-          <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="xxxl" asChild>
               <a
                 href="https://store.steampowered.com/app/APP_ID"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Open Steam page (new tab)"
-                className="flex items-center gap-2"
+                className="flex items-center gap-3"
               >
                 <svg
                   viewBox="0 0 24 24"
-                  className="size-5"
+                  className="size-9"
                   role="img"
                   aria-hidden="true"
                   focusable="false"
@@ -60,11 +61,11 @@ export default function ModelKitStoryPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Join our Discord server (new tab)"
-                className="flex items-center gap-2"
+                className="flex items-center gap-3"
               >
                 <svg
                   viewBox="0 0 24 24"
-                  className="size-5"
+                  className="size-9"
                   role="img"
                   aria-hidden="true"
                   focusable="false"
