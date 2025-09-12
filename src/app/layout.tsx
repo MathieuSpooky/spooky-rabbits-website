@@ -1,8 +1,8 @@
 import "./globals.css";
 import { ReactNode } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { NavBar } from "@/components/nav-bar";
-import { MessageSquare } from "lucide-react";
 import {
   siFacebook,
   siInstagram,
@@ -20,10 +20,22 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning className="dark">
       <body className="min-h-screen flex flex-col bg-background text-foreground">
-        <header className="border-b">
+        <header className="border-b bg-background/50 backdrop-blur-md">
           <div className="container mx-auto flex h-14 items-center px-4 relative">
-            <Link href="/" className="font-semibold mr-auto">
-              Spooky Rabbits
+            <Link
+              href="/"
+              className="mr-auto inline-flex items-center"
+              aria-label="Home"
+            >
+              <Image
+                src="/logo.svg"
+                alt="Spooky Rabbits"
+                width={120}
+                height={32}
+                priority
+                className="fill-white"
+                style={{ height: "auto" }}
+              />
             </Link>
             {/* Navbar centrée via absolute + translate */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -31,8 +43,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </div>
           </div>
         </header>
-        <main className="flex-1 container mx-auto px-4 py-10">{children}</main>
-        <footer className="border-t py-8 text-sm text-muted-foreground">
+        <main className="flex-1 flex">{children}</main>
+        <footer className="border-t py-8 text-sm text-muted-foreground bg-neutral-900">
           <div className="container mx-auto px-4 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div className="flex flex-col items-center gap-4 md:flex-row md:gap-6">
               <div>© {new Date().getFullYear()} Spooky Rabbits Studio</div>
@@ -41,13 +53,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                   href="/legal/mentions-legales"
                   className="hover:text-foreground hover:underline underline-offset-4"
                 >
-                  Mentions légales
+                  Legal Notice
                 </Link>
                 <Link
                   href="/legal/politique-de-confidentialite"
                   className="hover:text-foreground hover:underline underline-offset-4"
                 >
-                  Politique de confidentialité
+                  Privacy Policy
                 </Link>
               </div>
             </div>

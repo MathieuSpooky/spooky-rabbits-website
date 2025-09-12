@@ -1,10 +1,10 @@
-export const metadata = { title: "Mentions légales" };
+export const metadata = { title: "Legal Notice" };
 
-export default function MentionsLegalesPage() {
+export default function LegalNoticePage() {
   return (
     <div className="space-y-4">
-      <h1 className="text-3xl font-bold tracking-tight">Mentions légales</h1>
-      <p className="text-muted-foreground">Contenu à venir.</p>
+      <h1 className="text-3xl font-bold tracking-tight">Legal Notice</h1>
+      <p className="text-muted-foreground">Content coming soon.</p>
     </div>
   );
 }
