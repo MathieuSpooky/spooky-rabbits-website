@@ -1,6 +1,5 @@
-import { redirect } from "next/navigation";
-
-// Redirection par défaut vers la page Model Kit Story
 export default function IndexPage() {
-  redirect("/model-kit-story");
+  return (
+    <div className="w-full flex flex-col items-center justify-center gap-4 text-center bg-[url('/background.png')] bg-cover bg-center bg-no-repeat"></div>
+  );
 }
